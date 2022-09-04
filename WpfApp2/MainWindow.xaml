@@ -1,0 +1,125 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <!--<Button Width="200" Height="100"  Content="Hello" FontSize="28" FontWeight="ExtraBlack" FontFamily="Century Gothic">
+            <Button.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" ShadowDepth="7"></DropShadowBitmapEffect>
+            </Button.BitmapEffect>
+        </Button>-->
+    <!--<CheckBox Width="50" Height="50" IsChecked="False" Content="Hello" Background="Gray" Foreground="White" BorderBrush="Black">
+        <CheckBox.RenderTransform>
+            <ScaleTransform ScaleX="1" ScaleY="1"></ScaleTransform>
+        </CheckBox.RenderTransform>
+    </CheckBox>-->
+    <!--<Border CornerRadius="50" Width="100" Height="100" Background="SpringGreen">
+
+        <CheckBox Width="100" Height="100" IsChecked="False" 
+                      Foreground="Red"
+                      BorderThickness="0"></CheckBox>
+    </Border>-->
+
+    <!--<StackPanel Margin="30">
+            <RadioButton Background="Aqua" Foreground="Red" BorderBrush="Blue" Content="Baku"></RadioButton>
+            <RadioButton Background="Aqua" Foreground="Red" BorderBrush="Blue" Content="Ganja"></RadioButton>
+            <RadioButton Background="Aqua" Foreground="Red" BorderBrush="Blue" Content="Sumqayit"></RadioButton>
+        </StackPanel>-->
+
+    <!--<StackPanel Margin="30">
+            <RadioButton Background="Aqua" Foreground="Red" BorderBrush="Blue" Content="Russian" GroupName="Languages"></RadioButton>
+            <RadioButton Background="Aqua" Foreground="Red" BorderBrush="Blue" Content="English" GroupName="Languages"></RadioButton>
+            <RadioButton Background="Aqua" Foreground="Red" BorderBrush="Blue" Content="Visa" GroupName="Cards"></RadioButton>
+            <RadioButton Background="Aqua" Foreground="Red" BorderBrush="Blue" Content="Master" GroupName="Cards"></RadioButton>
+        </StackPanel>-->
+    <Grid >
+
+        <!--<Grid>
+            --><!--<Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Background="IndianRed" Name="btn" Click="btn_Click" Content="Number" FontSize="30" FontWeight="ExtraBlack"></Button>
+            
+            <RepeatButton Grid.Row="0" Grid.Column="1" Name="repeat_btn" Click="repeat_btn_Click" FontSize="30" FontWeight="ExtraBlack" Content="Number" Background="DarkBlue"></RepeatButton>
+            <ToggleButton Grid.Row="0" Grid.Column="2" Click="ToggleButton_Click" Name="toggle"></ToggleButton>
+            <Button Width="150" Height="50" Content="Hover Me" Grid.Column="0" Grid.Row="1" ToolTipService.ShowDuration="2000" Name="tooltip">
+                <Button.ToolTip >
+
+                    <StackPanel MouseEnter="StackPanel_MouseEnter">
+                        <Label FontSize="25" FontFamily="Century Gothic">Ola la la</Label>
+                        <Line Stroke="DeepPink"></Line>
+                    </StackPanel>
+                </Button.ToolTip>
+            </Button>-->
+            <!--<ScrollViewer>
+                <GroupBox Header="Languages" Padding="23" Height="150" BorderBrush="Pink" BorderThickness="3">
+                    <CheckBox Content="Data1"></CheckBox>
+                    <CheckBox Content="Data2"></CheckBox>
+                    <CheckBox Content="Data3"></CheckBox>
+                </GroupBox>
+            </ScrollViewer>-->
+
+            <!--<ScrollViewer>
+                <Expander Header="" Name="Settings">
+                    <StackPanel>
+
+                        <RadioButton></RadioButton>
+                        <RadioButton></RadioButton>
+
+                    </StackPanel>
+                </Expander>
+                
+            </ScrollViewer>--><!--
+            <Canvas Width=">
+                <Ellipse Width="70" Height="30" Fill="Gray" Canvas.Left="400" MouseLeftButtonDown="Ellipse_MouseLeftButtonDown">
+
+                    
+
+                </Ellipse>
+            </Canvas>
+            
+            <StackPanel Height="100" Width="100" Background="Red">
+                <Grid Width="100" Height="100">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <ToggleButton Grid.Row="0" Name="on" Content="On" ></ToggleButton>
+                    <ToggleButton Grid.Row="1"  Name="off" Content="Off" Click="off_Click"></ToggleButton>
+                </Grid>
+            </StackPanel>
+        </Grid>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Background="#ededed">
+            <WrapPanel>
+                <TextBox Margin="10,10,0,10" Width="100" Height="30" ToolTip="Path" IsEnabled="False"></TextBox>
+                <Button Margin="0,10,10,10"  Width="20" Height="30" Content="^" Background="#00A568" Foreground="White" BorderThickness="0"></Button>
+                <Button Margin="7"  Width="50" Height="30" Content="Save" Background="#00A568" Foreground="White" BorderThickness="0"></Button>
+                <Expander Width="70" FontSize="10" Header="AutoSave">
+                    <StackPanel>
+                        <RadioButton Content="ON"></RadioButton>
+                        <RadioButton Content="OFF"></RadioButton>
+                    </StackPanel>
+                </Expander>
+                
+                
+            </WrapPanel>
+            
+        </Grid>
+        <Grid Grid.Row="1">
+            
+        </Grid>
+    </Grid>
+</Window>
