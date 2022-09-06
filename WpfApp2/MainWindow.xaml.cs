@@ -1,5 +1,8 @@
-﻿using System;
+﻿//using Microsoft.Win32;
+using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +39,37 @@ namespace WpfApp2
 
         private void Ellipse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+
+        }
+
+        private void OFD_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (openFileDialog1.ShowDialog() == true)
+            {
+                FlowDocument myFlowDoc = new FlowDocument();
+                string filename = openFileDialog1.FileName;
+                myFlowDoc.Blocks.Add(new Paragraph(new Run(File.ReadAllText(filename))));
+                TextBox_1.Document = myFlowDoc;
+                this.FilePath_TxtB.Text = filename;
+            }
+        }
+
+        private void Save_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure you want to overwrite the file?");
+            if(result == MessageBoxResult.OK)
+            {
+                string richText = new TextRange(TextBox_1.Document.ContentStart, TextBox_1.Document.ContentEnd).Text;
+                File.WriteAllText(this.FilePath_TxtB.Text, richText);
+            }
+        }
+
+        private void SelectAll_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            
+
 
         }
     }
