@@ -105,13 +105,22 @@
         <Grid Background="#ededed" >
             <WrapPanel>
 
-                <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="FilePath_TxtB" Margin="10,10,0,10" Width="100" Height="30" ToolTip="Path" IsEnabled="False"></TextBox>
+                <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="FilePath_TxtB" Margin="10,10,0,10"
+                         Width="100" 
+                         Height="30" 
+                          
+                         IsEnabled="False"
+                         >
+                    <TextBox.ToolTip>
+                        <ToolTip Content="Path" Foreground="Aqua" ></ToolTip>
+                    </TextBox.ToolTip>
+                </TextBox>
                 <Button Name="OFD_Btn" Margin="0,10,10,10" Click="OFD_Btn_Click" Width="20" Height="30" Content="^" Background="#00A568" Foreground="White" BorderThickness="0"></Button>
                 <Button Name="Save_Btn" Margin="7"  Width="50" Height="30" Content="Save" Background="#00A568" Foreground="White" BorderThickness="0" Click="Save_Btn_Click"></Button>
                 <Expander Width="70" FontSize="10" Header="AutoSave">
                     <StackPanel>
-                        <RadioButton Content="ON"></RadioButton>
-                        <RadioButton Content="OFF"></RadioButton>
+                        <RadioButton Name="AutoSaveOn_RB" Content="ON" Checked="AutoSaveOn_RB_Checked" ></RadioButton>
+                        <RadioButton Name="AutoSaveOff_RB" Content="OFF" Checked="AutoSaveOff_RB_Checked"></RadioButton>
                     </StackPanel>
                 </Expander>
                 <Button Name="Cut_Btn"
@@ -153,14 +162,14 @@
                         Click="SelectAll_Btn_Click"
                         >
                 </Button>
-                <Label Margin="3,7,0,7" Height="30">Font Size:</Label>
-                <ComboBox Name="Font_Cmb" Width="50" Height="30" IsReadOnly="True"></ComboBox>
+                <Label Name="Error_Label" Margin="3,7,0,7" Height="60" Width="200" Visibility="Visible"  Foreground="Red"></Label>
+                
                 
             </WrapPanel>
             
         </Grid>
         <Grid Grid.Row="1">
-            <RichTextBox Name="TextBox_1" ></RichTextBox>
+            <RichTextBox Name="TextBox_1"  ></RichTextBox>
         </Grid>
     </Grid>
 </Window>

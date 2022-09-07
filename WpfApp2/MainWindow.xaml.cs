@@ -55,22 +55,58 @@ namespace WpfApp2
                 this.FilePath_TxtB.Text = filename;
             }
         }
-
-        private void Save_Btn_Click(object sender, RoutedEventArgs e)
+        private void SaveFunc()
         {
-            var result = MessageBox.Show("Are you sure you want to overwrite the file?");
-            if(result == MessageBoxResult.OK)
+            if (FilePath_TxtB.Text != string.Empty)
             {
                 string richText = new TextRange(TextBox_1.Document.ContentStart, TextBox_1.Document.ContentEnd).Text;
                 File.WriteAllText(this.FilePath_TxtB.Text, richText);
+            }
+
+        }
+        private void Save_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure you want to overwrite the file?");
+            if (result == MessageBoxResult.OK)
+            {
+                SaveFunc();
             }
         }
 
         private void SelectAll_Btn_Click(object sender, RoutedEventArgs e)
         {
-            
+
 
 
         }
+
+
+
+        private void AutoSaveOff_RB_Checked(object sender, RoutedEventArgs e)
+        {
+            TextBox_1.TextChanged -= TextBox_1_TextChanged;
+        }
+
+        private void AutoSaveOn_RB_Checked(object sender, RoutedEventArgs e)
+        {
+            if (FilePath_TxtB.Text.Length > 0)
+            {
+                TextBox_1.TextChanged += TextBox_1_TextChanged;
+                Error_Label.Content = string.Empty;
+            }
+            else
+            {
+                Error_Label.Visibility = Visibility.Visible;
+                Error_Label.Content = $"AutoSave Does Not Work,\n No Files Are Selected";
+            }
+        }
+
+        private void TextBox_1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+            SaveFunc();
+        }
+
+
     }
 }
